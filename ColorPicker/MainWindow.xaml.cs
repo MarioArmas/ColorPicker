@@ -92,7 +92,9 @@ namespace ColorPicker
                 // Mostrar el color
                 ColorFont.Fill = new SolidColorBrush(firstColor);
                 ColorTextFont.Text = $"RGB: ({firstColor.R}, {firstColor.G}, {firstColor.B})";
-
+                ColorFontNameHex.Text = $"{GetHexColor(firstColor)}";
+                ColorFontName.Foreground = new SolidColorBrush(FixFontColor(firstColor));
+                ColorFontNameHex.Foreground = new SolidColorBrush(FixFontColor(firstColor));
             }
 
             if (e.Key == Key.F3)
@@ -104,11 +106,16 @@ namespace ColorPicker
                 // Mostrar el color
                 ColorBack.Fill = new SolidColorBrush(secondColor);
                 ColorTextBack.Text = $"RGB: ({secondColor.R}, {secondColor.G}, {secondColor.B})";
+                ColorBackNameHex.Text = $"{GetHexColor(secondColor)}";
+                ColorBackName.Foreground = new SolidColorBrush(FixFontColor(secondColor));
+                ColorBackNameHex.Foreground = new SolidColorBrush(FixFontColor(secondColor));
             }
 
             if (firstColorPicked && secondColorPicked)
             {
-                ColorRatio.Text = $"Color ratio: {GetContrastRatio(firstColor, secondColor)}";
+                var ratio = GetContrastRatio(firstColor, secondColor);
+                var level = GetContrastLevel(ratio);
+                ColorRatio.Text = $"Contrast ratio: {ratio:0.00} {level}";
             }
         }
 
@@ -160,6 +167,30 @@ namespace ColorPicker
             }
 
             return (L1 + 0.05) / (L2 + 0.05);
+        }
+
+        string GetContrastLevel(double ratio)
+        {
+            if (ratio > 7) return "AAA";
+            if (ratio > 4.5) return "AA";
+            return "⚠️ Low";
+        }
+
+        // Font color
+        private Color FixFontColor(Color color)
+        {
+            Color black = Color.FromRgb(0, 0, 0);
+            Color white = Color.FromRgb(255, 255, 255);
+
+            double contrastWhite = GetContrastRatio(color, white);
+            double contrastBlack = GetContrastRatio(color, black);
+
+            if (contrastWhite >= contrastBlack)
+            {
+                return white;
+            }
+
+            return black;
         }
     }
 }

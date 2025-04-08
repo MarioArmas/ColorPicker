@@ -13,5 +13,9 @@
         <TextBlock x:Name="ColorTextFont" HorizontalAlignment="Left" Margin="85,233,0,0" TextWrapping="Wrap" Text="Press F2 to select color" VerticalAlignment="Top"/>
         <TextBlock x:Name="ColorTextBack" HorizontalAlignment="Left" Margin="254,233,0,0" TextWrapping="Wrap" Text="Press F3 to select color" VerticalAlignment="Top"/>
         <TextBlock x:Name="ColorRatio" HorizontalAlignment="Left" Margin="85,380,0,0" TextWrapping="Wrap" Text="Color ratio:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ColorFontName" HorizontalAlignment="Left" Margin="98,180,0,0" TextWrapping="Wrap" Text="Foreground" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ColorFontNameHex" HorizontalAlignment="Left" Margin="98,196,0,0" TextWrapping="Wrap" Text="#FFFFFF" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ColorBackName" HorizontalAlignment="Left" Margin="247,180,0,0" TextWrapping="Wrap" Text="Background" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ColorBackNameHex" HorizontalAlignment="Left" Margin="247,196,0,0" TextWrapping="Wrap" Text="#000000" VerticalAlignment="Top"/>
     </Grid>
 </Window>
