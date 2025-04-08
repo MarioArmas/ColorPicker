@@ -1,0 +1,55 @@
+# ============================
+# Ignorar archivos de Visual Studio
+# ============================
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ============================
+# Archivos y carpetas de compilación
+# ============================
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.mdb
+
+# ============================
+# Archivos generados por MSBuild
+# ============================
+*.Build.Caches/
+*.csproj.nuget.g.props
+*.csproj.nuget.g.targets
+*.csproj.FileListAbsolute.txt
+*.nuget.dgspec.json
+
+# ============================
+# NuGet
+# ============================
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.assets.json
+*.nuget.props
+*.nuget.targets
+
+# ============================
+# Archivos temporales
+# ============================
+*.bak
+*.tmp
+*.swp
+*.DS_Store
+Thumbs.db
+
+# ============================
+# Configuración local
+# ============================
+*.vscode/
+*.idea/
