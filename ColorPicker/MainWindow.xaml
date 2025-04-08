@@ -1,0 +1,17 @@
+﻿<Window x:Class="ColorPicker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ColorPicker"
+        mc:Ignorable="d"
+        Title="Color Picker" Height="450" Width="800"
+        KeyUp="Window_KeyUp">
+    <Grid>
+        <Rectangle x:Name="ColorFont" HorizontalAlignment="Left" Height="150" Margin="85,69,0,0" Stroke="Black" VerticalAlignment="Top" Width="150" RadiusX="5" RadiusY="5"/>
+        <Rectangle x:Name="ColorBack" HorizontalAlignment="Left" Height="150" Margin="235,69,0,0" Stroke="Black" VerticalAlignment="Top" Width="150" RadiusX="5" RadiusY="5"/>
+        <TextBlock x:Name="ColorTextFont" HorizontalAlignment="Left" Margin="85,233,0,0" TextWrapping="Wrap" Text="Press F2 to select color" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ColorTextBack" HorizontalAlignment="Left" Margin="254,233,0,0" TextWrapping="Wrap" Text="Press F3 to select color" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ColorRatio" HorizontalAlignment="Left" Margin="85,380,0,0" TextWrapping="Wrap" Text="Color ratio:" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
