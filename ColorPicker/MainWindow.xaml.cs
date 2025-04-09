@@ -29,6 +29,15 @@ namespace ColorPicker
             this.KeyDown += MainWindow_KeyDown;
             this.Focusable = true;
             this.Focus(); // importante para que reciba teclas
+
+            // Asignar segundo color
+            var color = Color.FromRgb(0, 0, 0);
+            
+            // Mostrar el color
+            ColorBack.Fill = new SolidColorBrush(color);
+            ColorBackName.Foreground = new SolidColorBrush(FixFontColor(secondColor));
+            ColorBackNameHex.Foreground = new SolidColorBrush(FixFontColor(secondColor));
+            ColorTextBack.Foreground = new SolidColorBrush(FixFontColor(secondColor));
         }
 
         private bool firstColorPicked = false;
