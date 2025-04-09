@@ -1,19 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Runtime.InteropServices;
-using System.Windows.Interop;
 
 namespace ColorPicker
 {
@@ -43,7 +33,6 @@ namespace ColorPicker
         private bool secondColorPicked = false;
         private Color firstColor;
         private Color secondColor;
-        private Color lastColor;
 
         [DllImport("gdi32.dll")]
         public static extern uint GetPixel(IntPtr hdc, int nXPos, int nYPos);
@@ -94,7 +83,6 @@ namespace ColorPicker
             if (e.Key == Key.F2)
             {
                 firstColor = GetColor();
-                lastColor = firstColor;
                 firstColorPicked = true;
 
                 // Mostrar el color
@@ -109,7 +97,6 @@ namespace ColorPicker
             if (e.Key == Key.F3)
             {
                 secondColor = GetColor();
-                lastColor = secondColor;
                 secondColorPicked = true;
 
                 // Mostrar el color
@@ -133,17 +120,46 @@ namespace ColorPicker
         {
             try
             {
-                if (e.Key == Key.F2 || e.Key == Key.F3)
+                if (e.Key == Key.F2)
                 {
                     // copy to clipboard
-                    var hexColor = GetHexColor(lastColor);
+                    var hexColor = GetHexColor(firstColor);
                     Clipboard.SetText(hexColor);
+                    CopyColorToClipboardFont();
+                }
+
+                if (e.Key == Key.F3)
+                {
+                    // copy to clipboard
+                    var hexColor = GetHexColor(secondColor);
+                    Clipboard.SetText(hexColor);
+                    CopyColorToClipboardBack();
                 }
             }
             catch (Exception ex)
             {
 
             }
+        }
+
+        private async void CopyColorToClipboardFont()
+        {
+            Color color = FixFontColor(firstColor);
+            ClipboardFont.Foreground = new SolidColorBrush(color);
+            ClipboardFont.Visibility = Visibility.Visible;
+
+            await Task.Delay(2200);
+            ClipboardFont.Visibility = Visibility.Collapsed;
+        }
+
+        private async void CopyColorToClipboardBack()
+        {
+            Color color = FixFontColor(secondColor);
+            ClipboardBack.Foreground = new SolidColorBrush(color);
+            ClipboardBack.Visibility = Visibility.Visible;
+
+            await Task.Delay(2200);
+            ClipboardBack.Visibility = Visibility.Collapsed;
         }
 
         private string GetHexColor(Color color)
@@ -188,8 +204,8 @@ namespace ColorPicker
 
         string GetContrastLevel(double ratio)
         {
-            if (ratio > 7) return "AAA";
-            if (ratio > 4.5) return "AA";
+            if (ratio > 7) return "Excellent AAA";
+            if (ratio > 4.5) return "Acceptable AA";
             return "⚠️ Low";
         }
 

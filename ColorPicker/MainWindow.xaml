@@ -19,5 +19,7 @@
         <TextBlock x:Name="ColorFontNameHex" HorizontalAlignment="Left" Margin="14,137,0,0" TextWrapping="Wrap" Text="#FFFFFF" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock x:Name="ColorBackName" HorizontalAlignment="Left" Margin="284,120,0,0" TextWrapping="Wrap" Text="Background" VerticalAlignment="Top"/>
         <TextBlock x:Name="ColorBackNameHex" HorizontalAlignment="Left" Margin="284,137,0,0" TextWrapping="Wrap" Text="#000000" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock x:Name="ClipboardFont" HorizontalAlignment="Left" Margin="148,10,0,0" TextWrapping="Wrap" Text="Copied to clipboard!" VerticalAlignment="Top" Visibility="Collapsed"/>
+        <TextBlock x:Name="ClipboardBack" HorizontalAlignment="Left" Margin="402,10,0,0" TextWrapping="Wrap" Text="Copied to clipboard!" VerticalAlignment="Top" Visibility="Collapsed"/>
     </Grid>
 </Window>
