@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ColorPicker"
         mc:Ignorable="d"
-        Title="Color Picker" Height="450" Width="800"
-        KeyUp="Window_KeyUp">
+        Title="Color Picker" Height="284" Width="540"
+        KeyUp="Window_KeyUp" MinWidth="540" MinHeight="284" MaxWidth="540" MaxHeight="284">
     <Grid>
-        <Rectangle x:Name="ColorFont" HorizontalAlignment="Left" Height="150" Margin="85,69,0,0" Stroke="Black" VerticalAlignment="Top" Width="150" RadiusX="5" RadiusY="5"/>
-        <Rectangle x:Name="ColorBack" HorizontalAlignment="Left" Height="150" Margin="235,69,0,0" Stroke="Black" VerticalAlignment="Top" Width="150" RadiusX="5" RadiusY="5"/>
-        <TextBlock x:Name="ColorTextFont" HorizontalAlignment="Left" Margin="85,233,0,0" TextWrapping="Wrap" Text="Press F2 to select color" VerticalAlignment="Top"/>
-        <TextBlock x:Name="ColorTextBack" HorizontalAlignment="Left" Margin="254,233,0,0" TextWrapping="Wrap" Text="Press F3 to select color" VerticalAlignment="Top"/>
-        <TextBlock x:Name="ColorRatio" HorizontalAlignment="Left" Margin="85,380,0,0" TextWrapping="Wrap" Text="Color ratio:" VerticalAlignment="Top"/>
-        <TextBlock x:Name="ColorFontName" HorizontalAlignment="Left" Margin="98,180,0,0" TextWrapping="Wrap" Text="Foreground" VerticalAlignment="Top"/>
-        <TextBlock x:Name="ColorFontNameHex" HorizontalAlignment="Left" Margin="98,196,0,0" TextWrapping="Wrap" Text="#FFFFFF" VerticalAlignment="Top"/>
-        <TextBlock x:Name="ColorBackName" HorizontalAlignment="Left" Margin="247,180,0,0" TextWrapping="Wrap" Text="Background" VerticalAlignment="Top"/>
-        <TextBlock x:Name="ColorBackNameHex" HorizontalAlignment="Left" Margin="247,196,0,0" TextWrapping="Wrap" Text="#000000" VerticalAlignment="Top"/>
+        <Rectangle x:Name="ColorFont" HorizontalAlignment="Left" Height="200" Stroke="Black" VerticalAlignment="Top" Width="270" StrokeThickness="0"/>
+        <Rectangle x:Name="ColorBack" HorizontalAlignment="Left" Height="200" Margin="270,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="270" StrokeThickness="0"/>
+        <TextBlock x:Name="ColorTextFont" HorizontalAlignment="Left" Margin="14,163,0,0" TextWrapping="Wrap" Text="Press F2 to select color" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ColorTextBack" HorizontalAlignment="Left" Margin="284,163,0,0" TextWrapping="Wrap" Text="Press F3 to select color" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ColorRatio" HorizontalAlignment="Left" Margin="14,205,0,0" TextWrapping="Wrap" Text="Contrast ratio:" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock x:Name="ColorFontName" HorizontalAlignment="Left" Margin="14,120,0,0" TextWrapping="Wrap" Text="Foreground" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ColorFontNameHex" HorizontalAlignment="Left" Margin="14,137,0,0" TextWrapping="Wrap" Text="#FFFFFF" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock x:Name="ColorBackName" HorizontalAlignment="Left" Margin="284,120,0,0" TextWrapping="Wrap" Text="Background" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ColorBackNameHex" HorizontalAlignment="Left" Margin="284,137,0,0" TextWrapping="Wrap" Text="#000000" VerticalAlignment="Top" FontSize="20"/>
     </Grid>
 </Window>

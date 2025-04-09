@@ -95,6 +95,7 @@ namespace ColorPicker
                 ColorFontNameHex.Text = $"{GetHexColor(firstColor)}";
                 ColorFontName.Foreground = new SolidColorBrush(FixFontColor(firstColor));
                 ColorFontNameHex.Foreground = new SolidColorBrush(FixFontColor(firstColor));
+                ColorTextFont.Foreground = new SolidColorBrush(FixFontColor(firstColor));
             }
 
             if (e.Key == Key.F3)
@@ -109,6 +110,7 @@ namespace ColorPicker
                 ColorBackNameHex.Text = $"{GetHexColor(secondColor)}";
                 ColorBackName.Foreground = new SolidColorBrush(FixFontColor(secondColor));
                 ColorBackNameHex.Foreground = new SolidColorBrush(FixFontColor(secondColor));
+                ColorTextBack.Foreground = new SolidColorBrush(FixFontColor(secondColor));
             }
 
             if (firstColorPicked && secondColorPicked)
@@ -121,11 +123,18 @@ namespace ColorPicker
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.F2)
+            try
             {
-                // copy to clipboard
-                var hexColor = GetHexColor(lastColor);
-                Clipboard.SetText(hexColor);
+                if (e.Key == Key.F2 || e.Key == Key.F3)
+                {
+                    // copy to clipboard
+                    var hexColor = GetHexColor(lastColor);
+                    Clipboard.SetText(hexColor);
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 
