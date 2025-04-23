@@ -53,3 +53,15 @@ Thumbs.db
 # ============================
 *.vscode/
 *.idea/
+
+# ============================
+# Ignorar archivos de paquetes generados
+# ============================
+ColorPicker.Package/AppPackages/
+ColorPicker.Package/Images/*
+ColorPicker.Package/BundleArtifacts/*
+*.appxbundle
+*.appxsym
+*.pfx
+*.cer
+*.ps1
